@@ -1,0 +1,115 @@
+print('Hello! Please select the corresponding number to see a different code!')
+print('1 : Using A Simple Calculator')
+print('2 : Calculating Profit')
+print('3 : Finding Discount')
+print('4 : Calculating Simple Interest')
+print('5 : Calculating Exponents')
+print('6 : Registering a person')
+CC = int(input('Choose a code: '))
+
+if CC == 1:
+    print('Welcome! Choose an operator!')
+    print('1 = Add')
+    print('2 = Subtract')
+    print('3 = Multiply')
+    print('4 = Divide')
+    print('5 = Modulus')
+    ope = int(input('Operator: '))
+
+    if ope == 1:
+        num1 = float(input('Enter first value: '))
+        num2 = float(input('Enter second value: '))
+        print('The sum of ' + str(num1) + ' and ' + str(num2) + ' is ' + str(num1 + num2))
+
+    elif ope == 2:
+        num1 = float(input('Enter the minuend (smaller) value: '))
+        num2 = float(input('Enter the subtrahend (larger) value: '))
+        print('The difference of ' + str(num1) + ' and ' + str(num2) + ' is ' + str(num2 - num1))
+
+    elif ope == 3:
+        num1 = float(input('Enter the multiplier value: '))
+        num2 = float(input('Enter the multiplicand value: '))
+        print('The product of ' + str(num1) + ' and ' + str(num2) + ' is ' + str(num1 * num2))
+
+    elif ope == 4:
+        num1 = float(input('Enter the dividend value: '))
+        num2 = float(input('Enter the divisor value: '))
+        if num2 == '0':
+            print('You cannot divide by zero.')
+        else:
+            print('The quotient of ' + str(num1) + ' and ' + str(num2) + ' is ' + str(num1 / num2))
+
+    elif ope == 5:
+        num1 = float(input('Enter the dividend value: '))
+        num2 = float(input('Enter the divisor value: '))
+        print('The remainder of ' + str(num1) + ' and ' + str(num2) + ' is ' + str(num1 % num2))
+
+    else:
+        print('Invalid entry. Please try again.')
+
+elif CC == 2:
+    Cost = float(input('What is the cost price? '))
+    Sell = float(input('What is the selling price? '))
+    print('The profit is ' + str(Sell - Cost))
+
+elif CC == 3:
+    print('Hello! I guess you are here to find the discount!')
+    pro1 = input('What is the name of product 1? ')
+    pro2 = input('What is the name of product 2? ')
+    pro3 = input('What is the name of product 3? ')
+    pro4 = input('What is the name of product 4? ')
+    pro5 = input('What is the name of product 5? ')
+    P1 = float(input('What is the price of product 1? '))
+    P2 = float(input('What is the price of product 2? '))
+    P3 = float(input('What is the price of product 3? '))
+    P4 = float(input('What is the price of product 4? '))
+    P5 = float(input('What is the price of product 5? '))
+    print('Please confirm the following.')
+    print(pro1 + ' is ' + str(P1))
+    print(pro2 + ' is ' + str(P2))
+    print(pro3 + ' is ' + str(P3))
+    print(pro4 + ' is ' + str(P4))
+    print(pro5 + ' is ' + str(P5))
+    check = input('Is the following correct? ')
+    if check == 'yes':
+        print('Thank you for re-confirming.')
+    elif check == 'yeah':
+        print('Thank you for re-confirming.')
+    elif check == 'yea':
+        print('Thank you for re-confirming.')
+    elif check == 'ye':
+        print('Thank you for re-confirming.')
+    else:
+        print('Please try again.')
+        quit()
+
+    dis = float(input('What is the discount for the total of these products? (Give answer in decimal; 0.5 = 50%) '))
+    count = 1 - dis
+    print('So the discounted total of ' + pro1 + ', ' + pro2 + ', ' + pro3 + ', ' + pro4 + ' and ' + pro5 + ' is ' + str((P1 + P2 + P3 + P4 + P5) * count))
+
+elif CC == 4:
+    principal = float(input('What is the principal? '))
+    rate = float(input('What is the rate? '))
+    time = float(input('What is the time period (give answer in years)? '))
+    print('The amount gained via interest is ' + str(principal * rate * time / 100))
+
+elif CC == 5:
+    num = float(input('Enter a value: '))
+    expo = int(input('Enter a value for the indices: '))
+    print(str(num) + ' raised to the power of ' + str(expo) + ' is ' + str(num ** expo) + '.')
+
+elif CC == 6:
+    input('What is your first name? ')
+    input('What is your last name? ')
+    User = input('What is your username? ')
+    Pass = input('What is your password? ')
+    RePass = input('Re-enter your password. ')
+    if RePass == Pass:
+        input('What is your email? ')
+        Code = input('Enter a six digit pin. ')
+        print('You are ' + User + '. Your password is ' + Pass + '. Your six digit pin is ' + Code + '.')
+    else:
+        print('You entered the wrong password.')
+
+else:
+    print('The number you have entered does not correspond with any code. Please try again.')
